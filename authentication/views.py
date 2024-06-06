@@ -4,11 +4,11 @@ from authentication.serializers import RegisterSerializer, LoginSerializer
 from rest_framework import response, status, permissions
 from django.contrib.auth import authenticate
 
-class AuthAPIView(GenericAPIView):
+class AuthUserAPIView(GenericAPIView):
 
     permission_classes=(permissions.IsAuthenticated,)
 
-    def get(self.request):
+    def get(self, request):
         user=request.user
 
         serializer = RegisterSerializer(user)
@@ -34,7 +34,7 @@ class LoginAPIView(GenericAPIView):
 
     serializer_class=LoginSerializer
 
-    def post(self,request):
+    def post(self, request):
         email = request.data.get('email',None)
         password = request.data.get('password', None)
 
