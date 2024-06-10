@@ -23,3 +23,4 @@ class LoginSerializer(serializers.ModelSerializer):
         read_only_fields = ['token']
 
 
+# class LoginSerializer(serializers.Serializer):
